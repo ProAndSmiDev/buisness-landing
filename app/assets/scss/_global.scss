@@ -101,6 +101,7 @@ ol {
 button {
   border: 0;
   cursor: pointer;
+  background-color: transparent;
 
   &.button {
     background-color: $thirdly;
