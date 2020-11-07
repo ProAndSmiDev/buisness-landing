@@ -1,4 +1,28 @@
 {
+  "menu": {
+    "header": [
+      {
+        "title": "Home",
+        "link": "/"
+      },
+      {
+        "title": "About us",
+        "link": "#about-us"
+      },
+      {
+        "title": "Team",
+        "link": "#team"
+      },
+      {
+        "title": "Projects",
+        "link": "#projects"
+      },
+      {
+        "title": "Contacts",
+        "link": "#contacts"
+      }
+    ]
+  },
   "copyright": {
     "author": "AndSmi",
     "copyright": "Developed by AndSmi"

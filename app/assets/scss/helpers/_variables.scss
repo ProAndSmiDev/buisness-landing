@@ -1,20 +1,16 @@
 /*
-  Обертка
-*/
-$wrapper: 100%;
-$t-wrapper: em(720);
-$pc-wrapper: em(960);
-$wd-wrapper: em(1190);
-
-/*
   Шрифт
 */
-$fs_base: 13px;
+$fs_base: 14px;
 
 /*
   Цвета
 */
 $primary: hsl(0, 0%, 100%);
-$secondary: hsl(0, 0%, 7%);
-$thirdly: hsl(223, 96%, 57%);
-$forthly: hsl(212, 42%, 23%);
+$secondary: hsl(0, 0%, 14%);
+$thirdly: hsl(209, 99%, 57%);
+$forthly: hsl(0, 100%, 48%);
+$fifth: hsl(209, 85%, 53%);
+$sixth: hsl(0, 0%, 96%);
+$seventh: hsl(0, 0%, 0%);
+$eighty: hsl(0, 0%, 10%);
