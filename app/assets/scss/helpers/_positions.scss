@@ -1,0 +1,54 @@
+/*
+  Миксин для центрирования блока и текста
+
+  Пример:
+  @include centered(block) - отцентрирует блок
+  @include centered(text) - отцентрирует текст
+*/
+
+@mixin centered($if) {
+  @if $if == block {
+    margin-left: auto;
+    margin-right: auto;
+  } @else {
+    text-align: center;
+  }
+}
+
+/*
+  Миксин для распложения блока и текста слева
+
+  Пример:
+  @include lefted(block) - сделает слева блок
+  @include lefted(text) - сделает слева текст
+*/
+
+@mixin lefted($if) {
+  @if $if == block {
+    margin-right: auto;
+  } @else {
+    text-align: left;
+  }
+}
+
+/*
+  Миксин для расположения справа блока и текста
+
+  Пример:
+  @include righted(block) - расположит справа блок
+  @include righted(text) - расположит справа текст
+*/
+
+@mixin righted($if) {
+  @if $if == block {
+    margin-left: auto;
+  } @else {
+    text-align: right;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}

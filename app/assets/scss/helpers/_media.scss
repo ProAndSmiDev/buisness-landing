@@ -1,0 +1,40 @@
+/*
+  $size - слово или число, от которого будет исходить медиа,
+
+  примеры:
+  @include media(desktop),
+  @include media(1200)
+
+  Выводы:
+  @media only screen and (max-width: 1199px) {}
+  @media only screen and (max-width: 1200px) {}
+*/
+@mixin media($size) {
+  $desktop: '(max-width: 1199px)';
+  $tablet: '(max-width: 1023px)';
+  $smartphone: '(max-width: 767px)';
+  $mobile: '(max-width: 575px)';
+  $standard: '(max-width: #{size}px)';
+
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  } @else if $size == smartphone {
+    @media only screen and #{$smartphone} {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  } @else {
+    @media only screen and #{$standard} {
+      @content;
+    }
+  }
+}

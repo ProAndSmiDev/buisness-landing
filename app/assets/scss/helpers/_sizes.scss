@@ -1,0 +1,16 @@
+/*
+  $pixels - число размерности в пикселях
+  $context - базовый размер по макету
+
+  Примеры:
+  @include em(16, 16);
+  @include em($fs, $fs_base);
+
+  Выводы:
+  1em
+  ($fs/$fs_base)em
+*/
+
+@function em($pixels, $context: $fs_base) {
+  @return #{$pixels / $context}em;
+}
