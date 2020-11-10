@@ -106,7 +106,8 @@ const svgtosprite = () => {
       mode: {
         stack: {
           sprite: "../sprite.svg"
-        }
+        },
+        padding: 0
       }
     }))
     .pipe(sync.stream())

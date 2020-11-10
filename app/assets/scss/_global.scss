@@ -30,28 +30,29 @@ body {
   padding: 0;
   min-height: 100vh;
   font-size: 14px;
-  line-height: 26px;
+  line-height: em(26px, $fs);
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
 }
 
 .wrapper {
   display: flex;
-  width: em(1140px);
+  max-width: em(1140px, $fs);
   align-items: center;
   flex-flow: row wrap;
+  width: 100%;
   justify-content: space-between;
   padding-right: 15px;
   padding-left: 15px;
   margin-left: auto;
   margin-right: auto;
   @include media(desktop) {
-    width: em(960px);
+    max-width: em(960px, $fs);
   }
   @include media(tablet) {
-    width: em(720px);
+    max-width: em(720px, $fs);
   }
   @include media(767) {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -69,7 +70,7 @@ a {
     height: 2px;
     @include pseudo();
     background-color: $thirdly;
-    bottom: em(-10px);
+    bottom: em(-10px, $fs);
     left: 0;
 
     transition: {
@@ -105,7 +106,7 @@ button {
 
   &.button {
     background-color: $thirdly;
-    border-radius: em(4px);
+    border-radius: 4px;
 
     transition: {
       duration: .4s;
