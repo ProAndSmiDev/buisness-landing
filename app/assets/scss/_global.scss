@@ -127,6 +127,10 @@ button {
       background-color: $fifth;
     }
   }
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 input,
