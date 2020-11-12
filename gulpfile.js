@@ -23,7 +23,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   },
   dev = {
     'pug': root.dev + '/views/**/*.pug',
-    'es': root.dev + '/assets/es/**/*.js',
+    'es': root.dev + '/assets/js/**/*.js',
     'fonts': root.dev + '/assets/fonts/**/*.ttf',
     'sass': root.dev + '/assets/scss/styles.scss',
     'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif}',

@@ -30,19 +30,18 @@ body {
   padding: 0;
   min-height: 100vh;
   font-size: 14px;
-  line-height: em(26px, $fs);
+  line-height: em(26, $fs);
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
 }
 
 .wrapper {
   display: flex;
-  max-width: em(1140px, $fs);
   align-items: center;
   flex-flow: row wrap;
-  width: 100%;
+  max-width: em(1140, $fs);
   justify-content: space-between;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: em(15, $fs);
+  padding-left: em(15, $fs);
   margin-left: auto;
   margin-right: auto;
   @include media(desktop) {
@@ -97,6 +96,16 @@ ol {
   align-items: center;
   flex-flow: row nowrap;
   justify-content: center;
+  @include media(smartphone) {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    background-color: $eighty;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    transition: left .3s ease-in-out;
+  }
 }
 
 button {
@@ -145,5 +154,15 @@ button {
 .bg {
   &--dark {
     background-color: $secondary;
+  }
+}
+
+header {
+  position: relative;
+  @include media(smartphone) {
+    .wrapper {
+      padding-top: em(20, $fs);
+      padding-bottom: em(20, $fs);
+    }
   }
 }

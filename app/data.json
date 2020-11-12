@@ -1,4 +1,10 @@
 {
+  "company": {
+    "logo": {
+      "url": "/img/sprite.svg#logo",
+      "alt": "Logo by your company"
+    }
+  },
   "menu": {
     "header": [
       {
