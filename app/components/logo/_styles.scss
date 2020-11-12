@@ -1,0 +1,17 @@
+.logo-link {
+  color: inherit;
+  line-height: 0;
+
+  &:before {
+    display: none;
+  }
+
+  &__pic {
+    max-width: em(187, $fs);
+    height: em(85, $fs);
+    @include media(smartphone) {
+      max-width: em(120, $fs);
+      height: em(16, $fs);
+    }
+  }
+}

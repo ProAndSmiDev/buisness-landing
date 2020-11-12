@@ -14,6 +14,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   svg = require('gulp-svg-sprite'),
   imgMin = require('gulp-imagemin'),
   pngQuant = require('imagemin-pngquant'),
+  ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
   root = {
     'dev': './app',
@@ -22,7 +23,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   },
   dev = {
     'pug': root.dev + '/views/**/*.pug',
-    'es': root.dev + '/assets/es/**/*.js',
+    'es': root.dev + '/assets/js/**/*.js',
     'fonts': root.dev + '/assets/fonts/**/*.ttf',
     'sass': root.dev + '/assets/scss/styles.scss',
     'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif}',
@@ -106,7 +107,8 @@ const svgtosprite = () => {
       mode: {
         stack: {
           sprite: "../sprite.svg"
-        }
+        },
+        padding: 0
       }
     }))
     .pipe(sync.stream())
@@ -128,6 +130,11 @@ const imgOpt = () => {
 /* Работа со шрифтами */
 const fonts = () => {
   src(dev.fonts)
+    .pipe(sync.stream())
+    .pipe(dest(prod.fonts));
+
+  src(dev.fonts)
+    .pipe(ttf2woff())
     .pipe(sync.stream())
     .pipe(dest(prod.fonts));
 

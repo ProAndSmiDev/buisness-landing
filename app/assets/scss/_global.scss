@@ -1,17 +1,21 @@
-@include family(Montserrat, Montserrat-Regular) {
+@include family(WorkSans, WorkSans-Light) {
+  font-weight: 300;
+}
+@include family(WorkSans, WorkSans-Regular) {
   font-weight: 400;
 }
-@include family(Montserrat, Montserrat-Medium) {
+@include family(WorkSans, WorkSans-Medium) {
   font-weight: 500;
 }
-@include family(Montserrat, Montserrat-SemiBold) {
+@include family(WorkSans, WorkSans-SemiBold) {
   font-weight: 600;
+}
+@include family(WorkSans, WorkSans-Bold) {
+  font-weight: 700;
 }
 @include family(Montserrat, Montserrat-Bold) {
   font-weight: 700;
 }
-@include family(OpenSans, open-sans);
-@include family(PlanetNS, planet-ns);
 
 *,
 *:after,
@@ -25,27 +29,29 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-size: 13px;
-  line-height: 20px;
-  font-family: 'Montserrat', 'Roboto', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: em(26, $fs);
+  font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
 }
 
 .wrapper {
   display: flex;
-  width: $wd-wrapper;
   align-items: center;
   flex-flow: row wrap;
-  justify-content: center;
-  padding-right: 15px;
-  padding-left: 15px;
+  max-width: em(1140, $fs);
+  justify-content: space-between;
+  padding-right: em(15, $fs);
+  padding-left: em(15, $fs);
+  margin-left: auto;
+  margin-right: auto;
   @include media(desktop) {
-    width: $pc-wrapper;
+    max-width: em(960px, $fs);
   }
   @include media(tablet) {
-    width: $t-wrapper;
+    max-width: em(720px, $fs);
   }
   @include media(767) {
-    width: $wrapper;
+    max-width: 100%;
   }
 }
 
@@ -56,12 +62,15 @@ img {
 a {
   color: $primary;
   position: relative;
+  text-decoration: none;
 
   &:before {
     width: 0;
     height: 2px;
     @include pseudo();
     background-color: $thirdly;
+    bottom: em(-10px, $fs);
+    left: 0;
 
     transition: {
       duration: .4s;
@@ -87,21 +96,40 @@ ol {
   align-items: center;
   flex-flow: row nowrap;
   justify-content: center;
+  @include media(smartphone) {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    background-color: $eighty;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    transition: left .3s ease-in-out;
+  }
 }
 
 button {
   border: 0;
   cursor: pointer;
-  background-color: $thirdly;
+  background-color: transparent;
 
-  transition: {
-    duration: .4s;
-    property: background-color;
-    timing-function: ease-in-out;
+  &.button {
+    background-color: $thirdly;
+    border-radius: 4px;
+
+    transition: {
+      duration: .4s;
+      property: background-color;
+      timing-function: ease-in-out;
+    }
+
+    &:hover {
+      background-color: $fifth;
+    }
   }
 
-  &:hover {
-    background-color: $forthly;
+  &:focus {
+    outline: 0;
   }
 }
 
@@ -127,3 +155,18 @@ button {
   margin-bottom: 0;
 }
 
+.bg {
+  &--dark {
+    background-color: $secondary;
+  }
+}
+
+header {
+  position: relative;
+  @include media(smartphone) {
+    .wrapper {
+      padding-top: em(20, $fs);
+      padding-bottom: em(20, $fs);
+    }
+  }
+}
