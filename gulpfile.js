@@ -14,6 +14,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   svg = require('gulp-svg-sprite'),
   imgMin = require('gulp-imagemin'),
   pngQuant = require('imagemin-pngquant'),
+  ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
   root = {
     'dev': './app',
@@ -129,6 +130,11 @@ const imgOpt = () => {
 /* Работа со шрифтами */
 const fonts = () => {
   src(dev.fonts)
+    .pipe(sync.stream())
+    .pipe(dest(prod.fonts));
+
+  src(dev.fonts)
+    .pipe(ttf2woff())
     .pipe(sync.stream())
     .pipe(dest(prod.fonts));
 
