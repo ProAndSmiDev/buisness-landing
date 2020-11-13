@@ -30,6 +30,7 @@ body {
   padding: 0;
   min-height: 100vh;
   font-size: 14px;
+  position: relative;
   line-height: em(26, $fs);
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
 }
@@ -52,6 +53,21 @@ body {
   }
   @include media(767) {
     max-width: 100%;
+  }
+
+  &--upper-footer {
+    padding-top: em(82, $fs);
+    padding-bottom: em(82, $fs);
+
+    @include media(smartphone) {
+      padding-top: em(20, $fs);
+      padding-bottom: em(20, $fs);
+    }
+  }
+
+  &--bottom-footer {
+    padding-top: em(20, $fs);
+    padding-bottom: em(20, $fs);
   }
 }
 
@@ -159,6 +175,10 @@ button {
   &--dark {
     background-color: $secondary;
   }
+
+  &--more-dark {
+    background-color: $eighty;
+  }
 }
 
 header {
@@ -169,4 +189,11 @@ header {
       padding-bottom: em(20, $fs);
     }
   }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

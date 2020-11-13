@@ -15,4 +15,12 @@ block content
   p some content's components is here
 
 block footer
-  p some footer's components is here
+  .bg.bg--dark
+    .wrapper.wrapper--upper-footer
+      include ../components/menu/Main
+      include ../components/subscribe/Main
+      include ../components/contacts/Main
+  .bg.bg--more-dark
+    .wrapper.wrapper--bottom-footer
+      include ../components/copyright/Main
+      include ../components/links/Main
