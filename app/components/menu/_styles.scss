@@ -58,6 +58,7 @@
   &__list {
     line-height: em(26, $fs);
   }
+
   @include media(smartphone) {
     line-height: 0;
   }
@@ -71,6 +72,7 @@
     &:not(:last-child) {
       margin-right: em(20, $fs);
     }
+
     @include media(smartphone) {
       width: 100%;
 
@@ -86,9 +88,9 @@
     &:before {
       bottom: em(-10, $fs);
     }
+
     @include media(smartphone) {
       $fs: 18;
-
       display: flex;
       width: 100%;
       justify-content: center;
@@ -107,6 +109,7 @@
       }
     }
   }
+
   @include media(smartphone) {
     &--active {
       left: 0;
@@ -117,6 +120,7 @@
 footer {
   .nav {
     width: 100%;
+
     &__burger {
       display: none;
     }
@@ -133,7 +137,6 @@ footer {
     background-color: transparent;
     justify-content: space-around;
     align-items: flex-start;
-
     @include media(smartphone) {
       flex-direction: row;
     }
@@ -155,7 +158,6 @@ footer {
           margin-right: em(10, $fs);
         }
       }
-
       @include media(mobile) {
         $fs: 12;
         font-size: em($fs, $fs_base);
@@ -170,6 +172,7 @@ footer {
       line-height: 1;
       color: $primary;
       transition: color .3s ease-in-out;
+
       &:hover,
       &--active {
         color: $thirdly;
@@ -177,8 +180,9 @@ footer {
 
       &:hover {
         background-color: transparent;
-        border:0;
+        border: 0;
       }
+
       &:before {
         display: none;
       }
