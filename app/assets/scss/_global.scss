@@ -1,19 +1,19 @@
-@include family(WorkSans, WorkSans-Light) {
+@include family(WorkSans, WorkSans, WorkSans-Light) {
   font-weight: 300;
 }
-@include family(WorkSans, WorkSans-Regular) {
+@include family(WorkSans, WorkSans, WorkSans-Regular) {
   font-weight: 400;
 }
-@include family(WorkSans, WorkSans-Medium) {
+@include family(WorkSans, WorkSans, WorkSans-Medium) {
   font-weight: 500;
 }
-@include family(WorkSans, WorkSans-SemiBold) {
+@include family(WorkSans, WorkSans, WorkSans-SemiBold) {
   font-weight: 600;
 }
-@include family(WorkSans, WorkSans-Bold) {
+@include family(WorkSans, WorkSans, WorkSans-Bold) {
   font-weight: 700;
 }
-@include family(Montserrat, Montserrat-Bold) {
+@include family(Montserrat, Montserrat, Montserrat-Bold) {
   font-weight: 700;
 }
 
@@ -46,10 +46,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   @include media(desktop) {
-    max-width: em(960px, $fs);
+    max-width: em(960, $fs);
   }
   @include media(tablet) {
-    max-width: em(720px, $fs);
+    max-width: em(720, $fs);
   }
   @include media(767) {
     max-width: 100%;
@@ -85,7 +85,7 @@ a {
     height: 2px;
     @include pseudo();
     background-color: $thirdly;
-    bottom: em(-10px, $fs);
+    bottom: em(-10, $fs);
     left: 0;
 
     transition: {

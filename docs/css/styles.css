@@ -163,13 +163,13 @@ body {
 
 @media only screen and (max-width: 1199px) {
   .wrapper {
-    max-width: 68.57143pxem;
+    max-width: 68.57143em;
   }
 }
 
 @media only screen and (max-width: 1023px) {
   .wrapper {
-    max-width: 51.42857pxem;
+    max-width: 51.42857em;
   }
 }
 
@@ -213,7 +213,7 @@ a:before {
   display: block;
   position: absolute;
   background-color: #2595fe;
-  bottom: -0.71429pxem;
+  bottom: -0.71429em;
   left: 0;
   -webkit-transition-duration: .4s;
        -o-transition-duration: .4s;

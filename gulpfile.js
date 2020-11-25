@@ -1,4 +1,4 @@
-const { src, dest, parallel, series, watch } = require('gulp'),
+const {src, dest, parallel, series, watch} = require('gulp'),
   sass = require('gulp-sass'),
   notify = require('gulp-notify'),
   rename = require('gulp-rename'),

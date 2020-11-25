@@ -12,8 +12,7 @@
     "deploy": "gulp"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Arelkench/Appartments.git"
+    "type": "git"
   },
   "keywords": [
     "appartments",
@@ -21,10 +20,6 @@
   ],
   "author": "AndSmi",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Arelkench/Appartments/issues"
-  },
-  "homepage": "https://github.com/Arelkench/Appartments#readme",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "fs": "0.0.1-security",
