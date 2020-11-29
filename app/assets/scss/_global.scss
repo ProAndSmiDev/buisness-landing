@@ -1,19 +1,19 @@
-@include family(WorkSans, WorkSans-Light) {
+@include family(WorkSans, WorkSans, WorkSans-Light) {
   font-weight: 300;
 }
-@include family(WorkSans, WorkSans-Regular) {
+@include family(WorkSans, WorkSans, WorkSans-Regular) {
   font-weight: 400;
 }
-@include family(WorkSans, WorkSans-Medium) {
+@include family(WorkSans, WorkSans, WorkSans-Medium) {
   font-weight: 500;
 }
-@include family(WorkSans, WorkSans-SemiBold) {
+@include family(WorkSans, WorkSans, WorkSans-SemiBold) {
   font-weight: 600;
 }
-@include family(WorkSans, WorkSans-Bold) {
+@include family(WorkSans, WorkSans, WorkSans-Bold) {
   font-weight: 700;
 }
-@include family(Montserrat, Montserrat-Bold) {
+@include family(Montserrat, Montserrat, Montserrat-Bold) {
   font-weight: 700;
 }
 
@@ -30,6 +30,7 @@ body {
   padding: 0;
   min-height: 100vh;
   font-size: 14px;
+  position: relative;
   line-height: em(26, $fs);
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
 }
@@ -45,13 +46,38 @@ body {
   margin-left: auto;
   margin-right: auto;
   @include media(desktop) {
-    max-width: em(960px, $fs);
+    max-width: em(960, $fs);
   }
   @include media(tablet) {
-    max-width: em(720px, $fs);
+    max-width: em(720, $fs);
   }
   @include media(767) {
     max-width: 100%;
+  }
+
+  &--upper-footer {
+    padding-top: em(82, $fs);
+    padding-bottom: em(82, $fs);
+    @include media(710) {
+      padding-top: em(40, $fs);
+      padding-bottom: em(40, $fs);
+    }
+    @include media(mobile) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &--bottom-footer {
+    padding-top: em(20, $fs);
+    padding-bottom: em(20, $fs);
+    display: flex;
+    justify-content: space-between;
+
+    @include media(1023) {
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
 
@@ -69,7 +95,7 @@ a {
     height: 2px;
     @include pseudo();
     background-color: $thirdly;
-    bottom: em(-10px, $fs);
+    bottom: em(-10, $fs);
     left: 0;
 
     transition: {
@@ -96,16 +122,6 @@ ol {
   align-items: center;
   flex-flow: row nowrap;
   justify-content: center;
-  @include media(smartphone) {
-    position: absolute;
-    top: 100%;
-    left: -100%;
-    width: 100%;
-    background-color: $eighty;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    transition: left .3s ease-in-out;
-  }
 }
 
 button {
@@ -113,23 +129,23 @@ button {
   cursor: pointer;
   background-color: transparent;
 
-  &.button {
-    background-color: $thirdly;
-    border-radius: 4px;
-
-    transition: {
-      duration: .4s;
-      property: background-color;
-      timing-function: ease-in-out;
-    }
-
-    &:hover {
-      background-color: $fifth;
-    }
-  }
-
   &:focus {
     outline: 0;
+  }
+}
+
+.button {
+  background-color: $thirdly;
+  border-radius: 4px;
+
+  transition: {
+    duration: .4s;
+    property: background-color;
+    timing-function: ease-in-out;
+  }
+
+  &:hover {
+    background-color: $fifth;
   }
 }
 
@@ -152,12 +168,33 @@ button {
 }
 
 .title {
+  margin-top: 0;
   margin-bottom: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &--site-links,
+  &--subscribe,
+  &--location {
+    $fs: 18;
+    font-size: em($fs, $fs_base);
+    margin-bottom: em(18, $fs);
+    color: $primary;
+    letter-spacing: em(0.15, $fs);
+    @include media(mobile) {
+      text-align: center;
+      margin-bottom: em(10, $fs);
+    }
+  }
 }
 
 .bg {
   &--dark {
     background-color: $secondary;
+  }
+
+  &--more-dark {
+    background-color: $eighty;
   }
 }
 
@@ -167,6 +204,50 @@ header {
     .wrapper {
       padding-top: em(20, $fs);
       padding-bottom: em(20, $fs);
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .footer-list {
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+    @include media(710) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &__item {
+        &:nth-child(2) {
+          order: 1;
+          text-align: center;
+          width: 100%;
+          margin-top: em(20, $fs);
+        }
+      }
+    }
+    @include media(mobile) {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &__item {
+        width: 100%;
+        padding-top: em(10, $fs);
+        padding-bottom: em(10, $fs);
+
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+
+        &:not(:first-child) {
+          border-top: 1px solid hsl(0, 0%, 22%);
+        }
+      }
     }
   }
 }

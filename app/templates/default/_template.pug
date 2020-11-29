@@ -11,12 +11,32 @@ html(lang="en")
     +link('styles.min', 'stylesheet')
   body
     header
-      block header
+      .bg.bg--dark
+        .wrapper
+          include ../../components/logo/Main
+          include ../../components/menu/Main
 
     main
       block content
 
     footer
-      block footer
+      .bg.bg--dark
+        .wrapper.wrapper--upper-footer
+          ul.footer-list
+            li.__item
+              h2.title.title--site-links Site links
+              include ../../components/menu/Main
+            li.__item
+              h2.title.title--subscribe Subscribe
+              include ../../components/subscribe/Main
+            li.__item
+              h2.title.title--location Location
+              include ../../components/location/Main
+      .bg.bg--more-dark
+        .wrapper.wrapper--bottom-footer
+          include ../../components/copyright/Main
+          include ../../components/links/Main
 
+
+    include ../../components/top-arrow/Main
     +script('app.min')

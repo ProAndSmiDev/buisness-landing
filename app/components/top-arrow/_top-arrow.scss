@@ -1,0 +1,28 @@
+.to-top {
+  position: fixed;
+  right: em(20, $fs);
+  bottom: -25vh;
+  background-color: $secondary;
+  border-radius: 50%;
+  width: em(54, $fs);
+  height: em(54, $fs);
+  border: 1px solid $primary;
+  transition: bottom .8s ease-in-out, opacity .3s ease-in-out;
+
+  &:hover {
+    opacity: .7;
+    background-color: $secondary;
+  }
+
+  &--active {
+    bottom: em(20, $fs);
+  }
+}
+
+.icon {
+  &--to-top {
+    width: em(29, $fs);
+    height: em(14, $fs);
+    color: $primary;
+  }
+}

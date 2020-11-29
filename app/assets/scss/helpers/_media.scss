@@ -14,7 +14,7 @@
   $tablet: '(max-width: 1023px)';
   $smartphone: '(max-width: 767px)';
   $mobile: '(max-width: 575px)';
-  $standard: '(max-width: #{size}px)';
+  $standard: '(max-width: #{$size}px)';
 
   @if $size == desktop {
     @media only screen and #{$desktop} {

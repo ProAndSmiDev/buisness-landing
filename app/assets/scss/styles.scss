@@ -1,10 +1,17 @@
-@import 'helpers/variables.scss';
-@import 'helpers/sizes.scss';
-@import 'helpers/media.scss';
-@import 'helpers/text.scss';
-@import 'helpers/positions.scss';
-@import 'helpers/media.scss';
-@import '_global.scss';
+@import 'helpers/_variables';
+@import 'helpers/_sizes';
+@import 'helpers/_media';
+@import 'helpers/_text';
+@import 'helpers/_positions';
+@import 'helpers/_media';
+@import 'helpers/_forms';
 
-@import '../../components/logo/_styles';
-@import '../../components/menu/_styles';
+@import '_global';
+
+@import '../../components/logo/_logo';
+@import '../../components/menu/_menu';
+@import '../../components/subscribe/_subscribe';
+@import '../../components/location/_location';
+@import '../../components/copyright/_copyright';
+@import '../../components/links/_links';
+@import '../../components/top-arrow/_top-arrow';

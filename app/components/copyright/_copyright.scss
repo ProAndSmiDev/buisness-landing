@@ -1,0 +1,11 @@
+.copyright {
+  $fs: 12;
+  font-size: em($fs, $fs_base);
+  line-height: em(18, $fs);
+  color: $primary;
+
+  @include media(1023) {
+    order: 1;
+    margin-top: em(10, $fs);
+  }
+}

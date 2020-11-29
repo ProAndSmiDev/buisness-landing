@@ -1,10 +1,10 @@
-const { src, dest, parallel, series, watch } = require('gulp'),
+const {src, dest, parallel, series, watch} = require('gulp'),
   sass = require('gulp-sass'),
   notify = require('gulp-notify'),
   rename = require('gulp-rename'),
   prefix = require('gulp-autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
-  sync = require('browser-sync'),
+  sync = require('browser-sync').create(),
   fs = require('fs'),
   data = require('gulp-data'),
   pug = require('gulp-pug'),
@@ -37,24 +37,9 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   };
 
 /* Работа со стилями */
-const styles = () => {
-  return src(dev.sass)
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'expanded',
-    }).on('error', notify.onError()))
-    .pipe(prefix([
-      '> 1%',
-      'ie 8',
-      'ie 7',
-      'last 15 versions'
-    ]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(sync.stream())
-    .pipe(dest(prod.css));
-};
 const stylesMin = () => {
   return src(dev.sass)
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed',
     }).on('error', notify.onError()))
@@ -67,17 +52,13 @@ const stylesMin = () => {
     .pipe(rename({
       suffix: '.min',
     }))
+    .pipe(sourcemaps.write('.'))
     .pipe(sync.stream())
     .pipe(dest(prod.css));
 };
 /* Работа со стилями */
 
 /* Работа со скриптами */
-const es = () => {
-  return src(dev.es)
-    .pipe(concat('app.js'))
-    .pipe(dest(prod.js));
-};
 const esMin = () => {
   return src(dev.es)
     .pipe(concat('app.min.js'))
@@ -157,19 +138,17 @@ const watchFiles = () => {
   watch(dev.fonts, fonts);
   watch(dev.svg, svgtosprite);
   watch(dev.img, imgOpt);
-  watch(dev.es, series(esMin, es));
-  watch([root.dev + '/assets/scss/**/*.scss', root.dev + '/components/**/*.scss'], series(styles, stylesMin));
+  watch(dev.es, series(esMin));
+  watch([root.dev + '/assets/scss/**/*.scss', root.dev + '/components/**/*.scss'], series(stylesMin));
   watch([root.data, root.dev + '/**/*.pug'], pugtohtml);
 };
 /* работа с localhost */
 
 /* Работа с изначальной сборкой проекта */
 const buildProd = series(fonts, svgtosprite, imgOpt, esMin, stylesMin, pugtohtml);
-const buildDev = series(fonts, svgtosprite, imgOpt, es, styles, pugtohtml);
 /* Работа с изначальной сборкой проекта */
 
 /* Таски проекта */
 exports.build2prod = buildProd;
-exports.build2dev = buildDev;
 exports.default = watchFiles;
 /* Таски проекта */

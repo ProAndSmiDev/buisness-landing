@@ -9,3 +9,7 @@ mixin link(file, rel)
 
 mixin script(file)
   script(src="./js/" + file + ".js")
+
+mixin svgIcon(icon)
+  svg.icon(class='icon--' + icon)
+    use(xlink:href='./img/sprite.svg#' + icon)

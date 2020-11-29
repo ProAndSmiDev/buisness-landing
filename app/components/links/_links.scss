@@ -1,0 +1,32 @@
+.links-list {
+  &__item {
+    &:not(:last-child) {
+      margin-right: em(25, $fs);
+      position: relative;
+
+      &:after {
+        @include pseudo();
+        height: em(14, $fs);
+        width: 1px;
+        background-color: $primary;
+        right: em(-14, $fs);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__url {
+    $fs: 12;
+    font-size: em($fs, $fs_base);
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $thirdly;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+}
