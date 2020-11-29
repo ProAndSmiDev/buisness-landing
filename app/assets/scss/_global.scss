@@ -58,12 +58,10 @@ body {
   &--upper-footer {
     padding-top: em(82, $fs);
     padding-bottom: em(82, $fs);
-
     @include media(710) {
       padding-top: em(40, $fs);
       padding-bottom: em(40, $fs);
     }
-
     @include media(mobile) {
       padding-top: 0;
       padding-bottom: 0;
@@ -73,6 +71,13 @@ body {
   &--bottom-footer {
     padding-top: em(20, $fs);
     padding-bottom: em(20, $fs);
+    display: flex;
+    justify-content: space-between;
+
+    @include media(1023) {
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
 
@@ -213,7 +218,6 @@ footer {
     width: 100%;
     align-items: baseline;
     justify-content: space-between;
-
     @include media(710) {
       flex-wrap: wrap;
       justify-content: space-between;
@@ -227,7 +231,6 @@ footer {
         }
       }
     }
-
     @include media(mobile) {
       flex-direction: row;
       flex-wrap: wrap;
