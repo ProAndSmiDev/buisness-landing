@@ -237,6 +237,10 @@ footer {
         padding-top: em(10, $fs);
         padding-bottom: em(10, $fs);
 
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+
         &:not(:first-child) {
           border-top: 1px solid hsl(0, 0%, 22%);
         }

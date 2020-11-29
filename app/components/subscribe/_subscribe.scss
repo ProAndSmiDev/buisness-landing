@@ -1,11 +1,5 @@
 .subscribe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   &__field {
-    $fs: 14;
-    font-size: em($fs, $fs_base);
     color: $secondary;
     border-radius: 4px;
     max-width: em(255, $fs);
@@ -55,5 +49,12 @@
       display: block;
       margin: em(20, $fs) auto 0;
     }
+  }
+
+  @include media(1023) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
