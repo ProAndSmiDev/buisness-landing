@@ -129,23 +129,23 @@ button {
   cursor: pointer;
   background-color: transparent;
 
-  &.button {
-    background-color: $thirdly;
-    border-radius: 4px;
-
-    transition: {
-      duration: .4s;
-      property: background-color;
-      timing-function: ease-in-out;
-    }
-
-    &:hover {
-      background-color: $fifth;
-    }
-  }
-
   &:focus {
     outline: 0;
+  }
+}
+
+.button {
+  background-color: $thirdly;
+  border-radius: 4px;
+
+  transition: {
+    duration: .4s;
+    property: background-color;
+    timing-function: ease-in-out;
+  }
+
+  &:hover {
+    background-color: $fifth;
   }
 }
 
