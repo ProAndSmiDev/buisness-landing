@@ -58,6 +58,12 @@ body {
   &--upper-footer {
     padding-top: em(82, $fs);
     padding-bottom: em(82, $fs);
+
+    @include media(710) {
+      padding-top: em(40, $fs);
+      padding-bottom: em(40, $fs);
+    }
+
     @include media(mobile) {
       padding-top: 0;
       padding-bottom: 0;
@@ -207,23 +213,32 @@ footer {
     width: 100%;
     align-items: baseline;
     justify-content: space-between;
+
+    @include media(710) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &__item {
+        &:nth-child(2) {
+          order: 1;
+          text-align: center;
+          width: 100%;
+          margin-top: em(20, $fs);
+        }
+      }
+    }
+
     @include media(mobile) {
       flex-direction: row;
       flex-wrap: wrap;
 
       &__item {
         width: 100%;
-        @include media(mobile) {
-          padding-top: em(10, $fs);
-          padding-bottom: em(10, $fs);
+        padding-top: em(10, $fs);
+        padding-bottom: em(10, $fs);
 
-          &:not(:first-child) {
-            border-top: 1px solid hsl(0, 0%, 22%);
-          }
-
-          &:nth-child(2) {
-            order: 1;
-          }
+        &:not(:first-child) {
+          border-top: 1px solid hsl(0, 0%, 22%);
         }
       }
     }
