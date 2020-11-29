@@ -58,7 +58,6 @@ body {
   &--upper-footer {
     padding-top: em(82, $fs);
     padding-bottom: em(82, $fs);
-
     @include media(smartphone) {
       padding-top: em(20, $fs);
       padding-bottom: em(20, $fs);
@@ -169,6 +168,18 @@ button {
 
 .title {
   margin-bottom: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &--site-links,
+  &--subscribe,
+  &--contacts {
+    $fs: 18;
+    font-size: em($fs, $fs_base);
+    margin-bottom: em(18, $fs);
+    color: $primary;
+    letter-spacing: em(0.15, $fs);
+  }
 }
 
 .bg {
@@ -196,4 +207,10 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+
+  .footer-list {
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+  }
 }

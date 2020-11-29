@@ -22,9 +22,16 @@ html(lang="en")
     footer
       .bg.bg--dark
         .wrapper.wrapper--upper-footer
-          include ../../components/menu/Main
-          include ../../components/subscribe/Main
-          include ../../components/contacts/Main
+          ul.footer-list
+            li.__item
+              h2.title.title--site-links Site links
+              include ../../components/menu/Main
+            li.__item
+              h2.title.title--subscribe Subscribe
+              include ../../components/subscribe/Main
+            li.__item
+              h2.title.title--contacts Contacts
+              include ../../components/contacts/Main
       .bg.bg--more-dark
         .wrapper.wrapper--bottom-footer
           include ../../components/copyright/Main

@@ -7,7 +7,6 @@
     "doc": "docs"
   },
   "scripts": {
-    "build-dev": "gulp build2dev",
     "build-prod": "gulp build2prod",
     "deploy": "gulp"
   },

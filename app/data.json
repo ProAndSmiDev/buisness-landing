@@ -3,7 +3,24 @@
     "logo": {
       "url": "./img/sprite.svg#logo",
       "alt": "Logo by your company"
-    }
+    },
+    "address": "624 Green Ave, Suite 123",
+    "city": "New York",
+    "postIndex": "CA 84104",
+    "socials": [
+      {
+        "url": "#",
+        "title": "Facebook"
+      },
+      {
+        "url": "#",
+        "title": "Twitter"
+      },
+      {
+        "url": "#",
+        "title": "Instagramm"
+      }
+    ]
   },
   "menu": {
     "header": [
@@ -28,6 +45,19 @@
         "link": "#contacts"
       }
     ]
+  },
+  "footer": {
+    "links": [
+      {
+        "url": "#",
+        "title": "Privacy Policy"
+      },
+      {
+        "url": "#",
+        "title": "Terms & Conditions"
+      }
+    ],
+    "copyright": "Tagline lorem ipsum dolor sit amet, consectetur adipiscing eiusmod &copy; 2018 Company"
   },
   "copyright": {
     "author": "AndSmi",
