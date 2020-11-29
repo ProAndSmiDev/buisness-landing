@@ -9,14 +9,17 @@
     "postIndex": "CA 84104",
     "socials": [
       {
+        "id": "fb",
         "url": "#",
         "title": "Facebook"
       },
       {
+        "id": "tw",
         "url": "#",
         "title": "Twitter"
       },
       {
+        "id": "in",
         "url": "#",
         "title": "Instagramm"
       }

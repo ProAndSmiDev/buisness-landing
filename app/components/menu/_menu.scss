@@ -107,6 +107,15 @@
     }
   }
   @include media(smartphone) {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    background-color: $eighty;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    transition: left .3s ease-in-out;
+
     &--active {
       left: 0;
     }
@@ -134,8 +143,10 @@
       background-color: transparent;
       justify-content: space-around;
       align-items: flex-start;
-      @include media(smartphone) {
+      @include media(mobile) {
         flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
       }
 
       &__item {
@@ -146,19 +157,9 @@
         &:not(:last-child) {
           margin-bottom: em(30, $fs);
           margin-right: 0;
-        }
-        @include media(smartphone) {
-          $fs: 14;
-          font-size: em($fs, $fs_base);
-
-          &:not(:last-child) {
+          @include media(mobile) {
             margin-bottom: 0;
-            margin-right: em(10, $fs);
           }
-        }
-        @include media(mobile) {
-          $fs: 12;
-          font-size: em($fs, $fs_base);
         }
       }
 
