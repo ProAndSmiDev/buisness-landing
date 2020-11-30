@@ -7,7 +7,10 @@
   }
 
   &__photo {
-    max-width: em(350, $fs);
+    max-width: em(358, $fs);
+    border-radius: 4px;
+    line-height: 0;
+    box-shadow: 0 8px 10px -5px $secondary;
     @include media(1023) {
       margin-bottom: em(15, $fs);
     }
