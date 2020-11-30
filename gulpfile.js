@@ -26,7 +26,7 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     'es': root.dev + '/assets/js/**/*.js',
     'fonts': root.dev + '/assets/fonts/**/*.ttf',
     'sass': root.dev + '/assets/scss/styles.scss',
-    'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif}',
+    'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif,webp}',
     'svg': root.dev + '/assets/svg/**/*.svg',
   },
   prod = {
