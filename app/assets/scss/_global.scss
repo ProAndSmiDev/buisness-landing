@@ -27,12 +27,30 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding-bottom: em(471, $fs);
   min-height: 100vh;
   font-size: 14px;
   position: relative;
   line-height: em(26, $fs);
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
+  @include media(1023) {
+    padding-bottom: em(499, $fs);
+  }
+  @include media(smartphone) {
+    padding-bottom: em(466, $fs);
+  }
+  @include media(748) {
+    padding-bottom: em(493, $fs);
+  }
+  @include media(710) {
+    padding-bottom: em(589, $fs);
+  }
+  @include media(mobile) {
+    padding-bottom: em(465, $fs);
+  }
+  @include media(530) {
+    padding-bottom: em(483, $fs);
+  }
 }
 
 .wrapper {
@@ -73,7 +91,6 @@ body {
     padding-bottom: em(20, $fs);
     display: flex;
     justify-content: space-between;
-
     @include media(1023) {
       justify-content: center;
       text-align: center;
@@ -83,6 +100,7 @@ body {
 
 img {
   max-width: 100%;
+  line-height: 0;
 }
 
 a {
