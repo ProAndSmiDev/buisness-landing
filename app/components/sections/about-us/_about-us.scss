@@ -4,6 +4,12 @@
 
   &__info {
     max-width: em(490, $fs);
+    @include media(1023) {
+      flex: 1 0 60%;
+    }
+    @include media(629) {
+      flex: 0 0 auto;
+    }
   }
 
   &__photo {
@@ -12,16 +18,29 @@
     line-height: 0;
     box-shadow: 0 8px 10px -5px $secondary;
     @include media(1023) {
-      margin-bottom: em(15, $fs);
+      flex: 0 0 35%;
+      margin-bottom: em(25, $fs);
+    }
+    @include media(629) {
+      flex: 0 0 auto;
+
+      img {
+        max-height: em(200, $fs);
+      }
     }
   }
   @include media(1023) {
-    text-align: center;
-    justify-content: center;
+    text-align: left;
     padding-top: em(80, $fs);
     padding-bottom: em(80, $fs);
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
   }
-  @include media(mobile) {
+  @include media(629) {
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
     padding-top: em(40, $fs);
     padding-bottom: em(40, $fs);
   }
@@ -29,13 +48,24 @@
 
 .info {
   margin-right: em(30, $fs);
+  @include media(629) {
+    margin-right: 0;
+  }
 
   &__title {
     $fs: 36;
     font-size: em($fs, $fs_base);
     margin-bottom: em(50, $fs);
     @include media(1023) {
+      $fs: 30;
+      font-size: em($fs, $fs_base);
       margin-bottom: em(15, $fs);
+    }
+    @include media(629) {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      text-align: center;
     }
     @include media(mobile) {
       $fs: 24;
@@ -49,13 +79,16 @@
     letter-spacing: em(0.15, $fs);
     color: $secondary;
     font-weight: 300;
+    @include media(1023) {
+      line-height: em(20, $fs);
+    }
     @include media(mobile) {
       $fs: 12;
       font-size: em($fs, $fs_base);
       line-height: em(24, $fs);
     }
   }
-  @include media(1023) {
+  @include media(629) {
     order: 1;
   }
 }

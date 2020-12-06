@@ -25,30 +25,13 @@
 
 body {
   margin: 0;
-  padding-bottom: em(471, $fs);
   min-height: 100vh;
   font-size: 14px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   line-height: em(26, $fs);
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
-  @include media(1023) {
-    padding-bottom: em(499, $fs);
-  }
-  @include media(smartphone) {
-    padding-bottom: em(466, $fs);
-  }
-  @include media(748) {
-    padding-bottom: em(493, $fs);
-  }
-  @include media(710) {
-    padding-bottom: em(589, $fs);
-  }
-  @include media(mobile) {
-    padding-bottom: em(465, $fs);
-  }
-  @include media(530) {
-    padding-bottom: em(483, $fs);
-  }
 }
 
 .wrapper {
@@ -223,45 +206,39 @@ header {
   }
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 
-  .footer-list {
-    width: 100%;
-    align-items: baseline;
+.footer-list {
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  @include media(710) {
+    flex-wrap: wrap;
     justify-content: space-between;
-    @include media(710) {
-      flex-wrap: wrap;
-      justify-content: space-between;
 
-      &__item {
-        &:nth-child(2) {
-          order: 1;
-          text-align: center;
-          width: 100%;
-          margin-top: em(20, $fs);
-        }
+    &__item {
+      &:nth-child(2) {
+        order: 1;
+        text-align: center;
+        width: 100%;
+        margin-top: em(20, $fs);
       }
     }
-    @include media(mobile) {
-      flex-direction: row;
-      flex-wrap: wrap;
+  }
+  @include media(mobile) {
+    flex-direction: row;
+    flex-wrap: wrap;
 
-      &__item {
-        width: 100%;
-        padding-top: em(10, $fs);
-        padding-bottom: em(10, $fs);
+    &__item {
+      width: 100%;
+      padding-top: em(10, $fs);
+      padding-bottom: em(10, $fs);
 
-        &:nth-child(2) {
-          margin-top: 0;
-        }
+      &:nth-child(2) {
+        margin-top: 0;
+      }
 
-        &:not(:first-child) {
-          border-top: 1px solid hsl(0, 0%, 22%);
-        }
+      &:not(:first-child) {
+        border-top: 1px solid hsl(0, 0%, 22%);
       }
     }
   }
