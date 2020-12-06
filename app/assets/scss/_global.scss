@@ -142,8 +142,14 @@ button {
     timing-function: ease-in-out;
   }
 
+  cursor: pointer;
+
   &:hover {
     background-color: $fifth;
+  }
+
+  &:before {
+    display: none;
   }
 }
 
@@ -187,6 +193,7 @@ button {
 }
 
 .bg {
+  position: relative;
   &--dark {
     background-color: $secondary;
   }

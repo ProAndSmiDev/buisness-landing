@@ -1,5 +1,5 @@
 ;
-(function(){
+(function() {
   const arrowBtn = document.querySelector('.to-top');
 
   window.addEventListener('scroll', () => {

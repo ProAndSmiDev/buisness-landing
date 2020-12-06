@@ -1,0 +1,43 @@
+.bg {
+  &--home {
+    &:before {
+      @include pseudo();
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-image: url('/img/home/bg_home.png');
+      background-size: cover;
+      background-position: top center;
+      filter: contrast(.3);
+      z-index: -1;
+    }
+  }
+}
+
+.home {
+  min-height: em(1024, $fs);
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    $fs: 72;
+    font-size: em($fs, $fs_base);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: em(0.15, $fs);
+    color: $primary;
+    margin-bottom: em(135, $fs);
+  }
+
+  &__offer-link {
+    $fs: 18;
+    font-size: em($fs, $fs_base);
+    max-width: em(354, $fs);
+    width: 100%;
+    line-height: em(26, $fs);
+    text-align: center;
+    padding-top: em(11, $fs);
+    padding-bottom: em(11, $fs);
+  }
+}
