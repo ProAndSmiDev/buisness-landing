@@ -2,6 +2,10 @@
 (function() {
   const arrowBtn = document.querySelector('.to-top');
 
+  arrowBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
 

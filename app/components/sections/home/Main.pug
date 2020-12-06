@@ -1,5 +1,7 @@
-section#home.bg.bg--home(data-type="bg" data-speed="10")
+section#home.bg.bg--home
   .home.wrapper
     h1.__title.title One page
     a.__offer-link.button Start now
-    button.__continue-btn
+    button.__continue-btn(style='display: none;')
+      svg
+        use(xlink:href='./img/sprite.svg#arrow-down')
