@@ -204,7 +204,11 @@ button {
 }
 
 header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   @include media(smartphone) {
     .wrapper {
       padding-top: em(20, $fs);
