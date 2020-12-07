@@ -1,8 +1,8 @@
 section#home.bg.bg--home
   .home.wrapper
     .__body
-      h1.__title.title One page
-      a.__offer-link.button Start now
-    button.__continue-btn.pulse
+      h1.__title.title= sections.home.title
+      a.__offer-link.button= sections.home.btnText
+    a(href=sections.home.arrowURI).__continue-btn.pulse
       svg
         use(xlink:href='./img/sprite.svg#arrow-down')

@@ -90,5 +90,9 @@
       height: em(17, $fs);
       color: $primary;
     }
+
+    &:before {
+      display: none;
+    }
   }
 }

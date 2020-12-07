@@ -29,7 +29,7 @@
     "header": [
       {
         "title": "Home",
-        "link": "/"
+        "link": "#home"
       },
       {
         "title": "About us",
@@ -50,6 +50,11 @@
     ]
   },
   "sections": {
+    "home": {
+      "title": "One page",
+      "btnText": "Start now",
+      "arrowURI": "#about-us"
+    },
     "aboutUs": {
       "title": "About us",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. Donec tincidunt id nulla a aliquet. Suspendisse diam tellus, porta et cursus ut, laoreet et odio. Vivamus risus sem, imperdiet sit amet neque ut, imperdiet volutpat est. In luctus odioligula, a luctus magna finibus at. Donec non ligula sit amet sem accumsan ullamcorper nec ac neque.",
