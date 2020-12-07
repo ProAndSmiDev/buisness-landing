@@ -194,12 +194,36 @@ button {
 
 .bg {
   position: relative;
+  &--black {
+    background-color: $seventh;
+  }
+
   &--dark {
     background-color: $secondary;
   }
 
   &--more-dark {
     background-color: $eighty;
+  }
+
+  &--home {
+    &:before {
+      @include pseudo();
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-image: url('../img/home/bg_home.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: top center;
+      filter: contrast(.3);
+      z-index: -1;
+
+      @include media(1023) {
+        background-attachment: unset;
+      }
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 .about-us {
-  padding-top: em(120, $fs);
-  padding-bottom: em(179, $fs);
+  padding-top: em(119, $fs);
+  padding-bottom: em(178, $fs);
+  min-height: em(675, $fs);
 
   &__info {
     max-width: em(490, $fs);
@@ -29,6 +30,7 @@
       }
     }
   }
+
   @include media(1023) {
     text-align: left;
     padding-top: em(80, $fs);
@@ -36,6 +38,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+    min-height: em(415, $fs);
   }
   @include media(629) {
     flex-direction: column;
@@ -43,6 +46,7 @@
     text-align: justify;
     padding-top: em(40, $fs);
     padding-bottom: em(40, $fs);
+    min-height: em(514, $fs);
   }
 }
 
@@ -88,6 +92,7 @@
       line-height: em(24, $fs);
     }
   }
+
   @include media(629) {
     order: 1;
   }

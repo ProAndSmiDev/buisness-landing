@@ -10,13 +10,14 @@
 
 @import '_global';
 
-@import '../../components/logo/_logo';
-@import '../../components/menu/_menu';
-@import '../../components/subscribe/_subscribe';
-@import '../../components/location/_location';
-@import '../../components/copyright/_copyright';
-@import '../../components/links/_links';
-@import '../../components/top-arrow/_top-arrow';
+@import '../../components/logo/_styles';
+@import '../../components/menu/_styles';
+@import '../../components/subscribe/_styles';
+@import '../../components/location/_styles';
+@import '../../components/copyright/_styles';
+@import '../../components/links/_styles';
+@import '../../components/top-arrow/_styles';
 
-@import '../../components/sections/about-us/_about-us';
-@import '../../components/sections/home/_home';
+@import '../../components/sections/home/_styles';
+@import '../../components/sections/about-us/_styles';
+@import '../../components/sections/our-team/_styles';

@@ -1,0 +1,18 @@
+section#our-team.bg.bg--black
+  .our-team.wrapper
+    .__head
+      h2.__title.title= sections.ourTeam.title
+    .__body
+      ul.team-list.__team-list
+        each teammate in sections.ourTeam.teammates
+          li.__item
+            article.teammate
+              header.__header
+                picture.__photo
+                  src(srcset=teammate.photo.webp)
+                  img(src=teammate.photo.url.other alt=teammate.photo.alt)
+                h3.__name.title= teammate.name
+              .__body
+                p.__info= teammate.info
+              footer.__footer
+                +socials(teammate.socials, 'teammate__socials-list')

@@ -3,8 +3,4 @@
     | #{company.address}
     br
     | #{company.city}, #{company.postIndex}
-  ul.socials-list.__socials-list
-    each icon in company.socials
-      li.__item
-        a.__link(href=icon.url title=icon.title target="_blank")
-          +svgIcon(icon.id)
+  +socials(company.socials, 'location__socials-list')

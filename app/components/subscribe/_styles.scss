@@ -36,7 +36,7 @@
     padding-top: em(11, $fs);
     padding-bottom: em(11, $fs);
     letter-spacing: em(0.15, $fs);
-    
+
     @include media(710) {
       margin-top: em(20, $fs);
     }
