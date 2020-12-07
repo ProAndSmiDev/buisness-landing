@@ -2,6 +2,7 @@
   padding-top: em(120, $fs);
   padding-bottom: em(120, $fs);
   min-height: em(700, $fs);
+  flex-wrap: wrap;
 
   &__head {
     margin-bottom: em(41, $fs);
@@ -16,11 +17,18 @@
 }
 
 .team-list {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
   &__item {
     flex-basis: em(338, $fs);
 
-    &:not(:nth-child(n+3)) {
+    &:not(:nth-child(3n + 3)) {
       margin-right: em(48, $fs);
+    }
+    
+    &:nth-child(n+4) {
+      margin-top: em(48, $fs);
     }
   }
 }

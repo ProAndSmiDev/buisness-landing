@@ -149,6 +149,146 @@
               "url": "#"
             }
           ]
+        },
+        {
+          "name": "Andrea Sim",
+          "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. ",
+          "photo": {
+            "url": {
+              "webp": "./img/team/Andrea_Sim.webp",
+              "other": "./img/team/Andrea_Sim.jpg"
+            },
+            "alt": "Andrea Sim's profile photo"
+          },
+          "socials": [
+            {
+              "id": "fb",
+              "title": "Andrea Sim in facebook",
+              "url": "#"
+            },
+            {
+              "id": "tw",
+              "title": "Andrea Sim in twitter",
+              "url": "#"
+            },
+            {
+              "id": "in",
+              "title": "Andrea Sim in instagramm",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "name": "Alexander Duma",
+          "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. ",
+          "photo": {
+            "url": {
+              "webp": "./img/team/Alexander_Duma.webp",
+              "other": "./img/team/Alexander_Duma.jpg"
+            },
+            "alt": ""
+          },
+          "socials": [
+            {
+              "id": "fb",
+              "title": "Alexander Duma in facebook",
+              "url": "#"
+            },
+            {
+              "id": "tw",
+              "title": "Alexander Duma in twitter",
+              "url": "#"
+            },
+            {
+              "id": "in",
+              "title": "Alexander Duma in instagramm",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "name": "John Smith",
+          "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. ",
+          "photo": {
+            "url": {
+              "webp": "./img/team/John_Smith.webp",
+              "other": "./img/team/John_Smith.jpg"
+            },
+            "alt": ""
+          },
+          "socials": [
+            {
+              "id": "fb",
+              "title": "John Smith in facebook",
+              "url": "#"
+            },
+            {
+              "id": "tw",
+              "title": "John Smith in twitter",
+              "url": "#"
+            },
+            {
+              "id": "in",
+              "title": "John Smith in instagramm",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "name": "Alexander Duma",
+          "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. ",
+          "photo": {
+            "url": {
+              "webp": "./img/team/Alexander_Duma.webp",
+              "other": "./img/team/Alexander_Duma.jpg"
+            },
+            "alt": ""
+          },
+          "socials": [
+            {
+              "id": "fb",
+              "title": "Alexander Duma in facebook",
+              "url": "#"
+            },
+            {
+              "id": "tw",
+              "title": "Alexander Duma in twitter",
+              "url": "#"
+            },
+            {
+              "id": "in",
+              "title": "Alexander Duma in instagramm",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "name": "John Smith",
+          "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem. ",
+          "photo": {
+            "url": {
+              "webp": "./img/team/John_Smith.webp",
+              "other": "./img/team/John_Smith.jpg"
+            },
+            "alt": ""
+          },
+          "socials": [
+            {
+              "id": "fb",
+              "title": "John Smith in facebook",
+              "url": "#"
+            },
+            {
+              "id": "tw",
+              "title": "John Smith in twitter",
+              "url": "#"
+            },
+            {
+              "id": "in",
+              "title": "John Smith in instagramm",
+              "url": "#"
+            }
+          ]
         }
       ]
     }
