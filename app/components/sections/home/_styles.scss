@@ -26,10 +26,6 @@
     color: $primary;
     margin-bottom: em(135, $fs);
     text-align: center;
-    //text-overflow: ellipsis;
-    //overflow: hidden;
-    //white-space: nowrap;
-    //max-width: 100%;
 
     @include media(1023) {
       margin-bottom: em(40, $fs);
