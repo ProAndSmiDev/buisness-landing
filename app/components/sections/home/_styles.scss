@@ -1,6 +1,6 @@
 .home {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: -webkit-fill-available;
   flex-flow: column nowrap;
   padding-top: em(125, $fs);
   padding-bottom: em(40, $fs);
