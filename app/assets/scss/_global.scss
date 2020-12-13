@@ -1,23 +1,18 @@
 @include family(WorkSans, WorkSans, WorkSans-Light) {
   font-weight: 300;
 }
-
 @include family(WorkSans, WorkSans, WorkSans-Regular) {
   font-weight: 400;
 }
-
 @include family(WorkSans, WorkSans, WorkSans-Medium) {
   font-weight: 500;
 }
-
 @include family(WorkSans, WorkSans, WorkSans-SemiBold) {
   font-weight: 600;
 }
-
 @include family(WorkSans, WorkSans, WorkSans-Bold) {
   font-weight: 700;
 }
-
 @include family(Montserrat, Montserrat, Montserrat-Bold) {
   font-weight: 700;
 }
@@ -110,6 +105,7 @@ a {
   color: $primary;
   position: relative;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 
   &:before {
     width: 0;
@@ -149,6 +145,7 @@ button {
   border: 0;
   cursor: pointer;
   background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus {
     outline: 0;
@@ -164,7 +161,6 @@ button {
     property: background-color;
     timing-function: ease-in-out;
   }
-
   cursor: pointer;
 
   &:hover {
@@ -245,7 +241,6 @@ button {
       background-position: top center;
       filter: contrast(.3);
       z-index: -1;
-
       @include media(1023) {
         background-attachment: unset;
       }
@@ -300,7 +295,6 @@ button {
   &--header {
     #{$self}__burger {
       display: none;
-
       @include media(smartphone) {
         display: inline-block;
         position: relative;
@@ -359,7 +353,6 @@ button {
   &--footer {
     width: 100%;
   }
-
   @include media(smartphone) {
     line-height: 0;
   }
@@ -384,12 +377,10 @@ button {
 
       &:not(:last-child) {
         margin-right: em(20, $fs);
-
         @include media(smartphone) {
           margin-right: 0;
         }
       }
-
       @include media(smartphone) {
         width: 100%;
       }
@@ -405,7 +396,6 @@ button {
           width: 100%;
         }
       }
-
       @include media(smartphone) {
         $fs: 18;
         display: flex;
@@ -427,7 +417,6 @@ button {
         }
       }
     }
-
     @include media(smartphone) {
       &#{$self} {
         position: absolute;
@@ -449,7 +438,6 @@ button {
   &--footer {
     flex-direction: column;
     align-items: flex-start;
-
     @include media(mobile) {
       flex-direction: row;
       align-items: baseline;
