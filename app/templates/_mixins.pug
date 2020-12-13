@@ -14,9 +14,19 @@ mixin svgIcon(icon)
   svg.icon(class='icon--' + icon)
     use(xlink:href='./img/sprite.svg#' + icon)
 
-mixin socials(socialsIcons, BEMClassName)
-  ul.socials-list(class=BEMClassName)
+mixin socials(socialsIcons, socialsMode)
+  ul.socials-list(class=socialsMode)
     each icon in socialsIcons
       li.__item
         a.__link(href=icon.url title=icon.title target="_blank")
           +svgIcon(icon.id)
+
+mixin menu(menuMode)
+  nav.nav(class='nav--' + menuMode)
+    if menuMode === 'header'
+      button.__burger
+        span
+    ul.menu(class='menu--' + menuMode)
+      each item in menu.header
+        li.__item
+          a.__link(href=item.link)= item.title

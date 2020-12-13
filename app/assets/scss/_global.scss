@@ -34,6 +34,20 @@ body {
   font-family: 'WorkSans', 'Roboto', 'Arial', sans-serif;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  @include media(smartphone) {
+    .wrapper {
+      padding-top: em(20, $fs);
+      padding-bottom: em(20, $fs);
+    }
+  }
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -194,6 +208,7 @@ button {
 
 .bg {
   position: relative;
+  z-index: 1;
   &--black {
     background-color: $seventh;
   }
@@ -227,20 +242,225 @@ button {
   }
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  @include media(smartphone) {
-    .wrapper {
-      padding-top: em(20, $fs);
-      padding-bottom: em(20, $fs);
+.socials-list {
+  justify-content: flex-start;
+
+  &__item {
+    line-height: 0;
+    &:not(:last-child) {
+      margin-right: em(18, $fs);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    &:before {
+      display: none;
+    }
+  }
+
+  .icon {
+    width: em(24, $fs);
+    height: em(24, $fs);
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+
+    &:hover {
+      color: $thirdly;
+    }
+  }
+
+  &--teammate {}
+
+  &--location {
+    @include media(mobile) {
+      justify-content: center;
     }
   }
 }
 
+.nav {
+  $self: &;
+  line-height: 0;
+
+  &--header {
+    #{$self}__burger {
+      display: none;
+
+      @include media(smartphone) {
+        display: inline-block;
+        position: relative;
+        width: em(30, $fs);
+        height: em(16, $fs);
+
+        &:before {
+          margin-top: em(-7, $fs);
+        }
+
+        &:after {
+          margin-top: em(5, $fs);
+        }
+
+        &:before,
+        &:after {
+          @include pseudo();
+          transition: transform .3s ease-in-out;
+        }
+
+        span,
+        &:before,
+        &:after {
+          width: 100%;
+          height: em(2, $fs);
+          display: block;
+          background-color: $primary;
+        }
+
+        &--active {
+          width: em(30, $fs);
+          height: em(16, $fs);
+
+          span {
+            display: none;
+          }
+
+          &:before {
+            transform: rotate(45deg);
+          }
+
+          &:after {
+            transform: rotate(-45deg);
+          }
+
+          &:before,
+          &:after {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--footer {
+    width: 100%;
+  }
+
+  @include media(smartphone) {
+    line-height: 0;
+  }
+}
+
+.menu {
+  $self: &;
+  line-height: em(26, $fs);
+  &__item {
+    $fs: 18;
+    font-size: em($fs, $fs_base);
+  }
+
+  &__link {
+    padding: 0;
+  }
+
+  &--header {
+    #{$self}__item {
+      $fs: 18;
+
+      &:not(:last-child) {
+        margin-right: em(20, $fs);
+
+        @include media(smartphone) {
+          margin-right: 0;
+        }
+      }
+
+      @include media(smartphone) {
+        width: 100%;
+      }
+    }
+
+    #{$self}__link {
+      &:before {
+        bottom: em(-10, $fs);
+      }
+
+      @include media(smartphone) {
+        $fs: 18;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: em(10, $fs);
+        border: 1px solid $secondary;
+        transition: background-color .3s ease-in-out;
+
+        &:hover,
+        &--active {
+          background-color: $secondary;
+          border: 1px solid $eighty;
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    @include media(smartphone) {
+      &#{$self} {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background-color: $eighty;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        transition: left .3s ease-in-out;
+
+        &--active {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &--footer {
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include media(mobile) {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    #{$self}__item {
+      $fs: 14;
+      font-size: em($fs, $fs_base);
+
+      &:not(:last-child) {
+        margin-bottom: em(30, $fs);
+        margin-right: 0;
+        @include media(mobile) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #{$self}__link {
+      line-height: 1;
+      transition: color .3s ease-in-out;
+
+      &:hover,
+      &--active {
+        color: $thirdly;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
 
 .footer-list {
   width: 100%;

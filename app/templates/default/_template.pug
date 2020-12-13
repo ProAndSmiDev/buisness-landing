@@ -14,7 +14,7 @@ html(lang="en")
       .bg.bg--dark
         .wrapper
           include ../../components/logo/Main
-          include ../../components/menu/Main
+          +menu('header')
 
     main
       block content
@@ -25,7 +25,7 @@ html(lang="en")
           ul.footer-list
             li.__item
               h2.title.title--site-links Site links
-              include ../../components/menu/Main
+              +menu('footer')
             li.__item
               h2.title.title--subscribe Subscribe
               include ../../components/subscribe/Main

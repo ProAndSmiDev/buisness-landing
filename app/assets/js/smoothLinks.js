@@ -7,11 +7,11 @@
       e.preventDefault();
 
       const blockID = link.getAttribute('href').substr(1);
+      const blockEl = document.getElementById(blockID).offsetTop;
 
-      document.getElementById(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+      (window.innerWidth >= 768)
+        ? window.scrollTo({top: blockEl - 85, behavior:'smooth'})
+        : window.scrollTo({top: blockEl - 56, behavior:'smooth'});
     });
   });
 })();

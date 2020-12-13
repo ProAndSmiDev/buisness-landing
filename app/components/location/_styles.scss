@@ -11,38 +11,4 @@
       margin-bottom: em(10, $fs);
     }
   }
-
-  &__socials-list {
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-    @include media(mobile) {
-      justify-content: center;
-    }
-  }
-}
-
-.socials-list {
-  &__item {
-    &:not(:last-child) {
-      margin-right: em(18, $fs);
-    }
-  }
-
-  &__link {
-    &:before {
-      display: none;
-    }
-  }
-
-  .icon {
-    width: em(24, $fs);
-    height: em(24, $fs);
-    cursor: pointer;
-    transition: color .3s ease-in-out;
-
-    &:hover {
-      color: $thirdly;
-    }
-  }
 }

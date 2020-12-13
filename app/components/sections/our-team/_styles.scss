@@ -75,16 +75,4 @@
     font-weight: 300;
     line-height: em(26, $fs);
   }
-
-  &__socials-list {
-    justify-content: flex-start;
-
-    li {
-      line-height: 0;
-    }
-
-    a {
-      display: inline-block;
-    }
-  }
 }

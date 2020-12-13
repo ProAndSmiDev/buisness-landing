@@ -7,6 +7,7 @@
   width: em(54, $fs);
   height: em(54, $fs);
   border: 1px solid $primary;
+  z-index: 2;
   transition: bottom .8s ease-in-out, opacity .3s ease-in-out;
 
   &:hover {
