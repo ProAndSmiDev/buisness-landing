@@ -27,6 +27,10 @@ mixin menu(menuMode)
       button.__burger
         span
     ul.menu(class='menu--' + menuMode)
-      each item in menu.header
-        li.__item
-          a.__link(href=item.link)= item.title
+      each item, i  in menu.header
+        if i > 0
+          li.__item
+            a.__link(href=item.link)= item.title
+        else
+          li.__item
+            a.__link.--active(href=item.link)= item.title

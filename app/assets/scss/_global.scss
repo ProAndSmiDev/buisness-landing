@@ -93,6 +93,10 @@ header {
   }
 }
 
+picture {
+  line-height: 0;
+}
+
 img {
   max-width: 100%;
 }
@@ -382,6 +386,12 @@ button {
     #{$self}__link {
       &:before {
         bottom: em(-10, $fs);
+      }
+
+      &--active {
+        &:before {
+          width: 100%;
+        }
       }
 
       @include media(smartphone) {
