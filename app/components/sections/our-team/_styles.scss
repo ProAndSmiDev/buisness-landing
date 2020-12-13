@@ -4,6 +4,20 @@
   min-height: em(700, $fs);
   flex-wrap: wrap;
 
+  @include media(desktop) {
+    justify-content: center;
+  }
+
+  @include media(1023) {
+    padding-top: em(80, $fs);
+    padding-bottom: em(80, $fs);
+  }
+
+  @include media(629) {
+    padding-top: em(40, $fs);
+    padding-bottom: em(40, $fs);
+  }
+
   &__head {
     margin-bottom: em(41, $fs);
   }
@@ -19,16 +33,67 @@
 .team-list {
   flex-wrap: wrap;
   justify-content: flex-start;
+
+  @include media(desktop) {
+    justify-content: center;
+  }
   
   &__item {
     flex-basis: em(338, $fs);
 
+    @include media(717) {
+      flex-basis: 75%;
+      max-width: em(345, $fs);
+    }
+
+    @include media(mobile) {
+      flex-basis: 100%;
+    }
+
     &:not(:nth-child(3n + 3)) {
       margin-right: em(48, $fs);
+
+      @include media(desktop) {
+        margin-right: 0;
+      }
     }
-    
-    &:nth-child(n+4) {
+
+    &:nth-child(n + 4) {
       margin-top: em(48, $fs);
+
+      @include media(desktop) {
+        margin-top: 0;
+      }
+    }
+
+    @include media(desktop) {
+      &:not(:nth-child(2n + 2)) {
+        margin-right: em(48, $fs);
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: em(48, $fs);
+      }
+    }
+
+    @include media(1023) {
+      &:not(:nth-child(2n + 2)) {
+        margin-right: em(12, $fs);
+
+        @include media(717) {
+          margin-right: 0;
+        }
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: em(12, $fs);
+      }
+    }
+
+    @include media(717) {
+      &:nth-child(n + 2) {
+        margin-top: em(48, $fs);
+      }
     }
   }
 }
@@ -59,7 +124,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: hsla(0, 0%, 14%, 0.95);
+    background-color: hsla(209, 99%, 57%, 0.6);
     width: 100%;
     padding: em(5, $fs);
     border-bottom-left-radius: 4px;
