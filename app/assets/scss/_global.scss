@@ -413,6 +413,7 @@ button {
         padding: em(10, $fs);
         border: 1px solid $secondary;
         transition: background-color .3s ease-in-out;
+        user-select: none;
 
         &:hover,
         &--active {
