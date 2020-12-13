@@ -306,6 +306,7 @@ button {
         position: relative;
         width: em(30, $fs);
         height: em(16, $fs);
+        -webkit-tap-highlight-color: transparent;
 
         &:before {
           margin-top: em(-7, $fs);
@@ -413,7 +414,7 @@ button {
         padding: em(10, $fs);
         border: 1px solid $secondary;
         transition: background-color .3s ease-in-out;
-        user-select: none;
+        -webkit-tap-highlight-color: transparent;
 
         &:hover,
         &--active {
