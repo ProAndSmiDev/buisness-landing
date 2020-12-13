@@ -1,9 +1,9 @@
 extends ../templates/default/_template
 
 block SEO
-  +meta('keywords', 'buisness, landing', 'one page')
-  +meta('description', 'Buisness landing for your services')
-  title One Page - buisness landing with strong and graceful code
+  +meta('keywords', company.seoInfo.keywords)
+  +meta('description', company.seoInfo.description)
+  title= company.seoInfo.title
 
 block content
   include ../components/sections/home/Main

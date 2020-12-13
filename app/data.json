@@ -23,7 +23,12 @@
         "url": "#",
         "title": "Instagramm"
       }
-    ]
+    ],
+    "seoInfo": {
+      "title": "One Page - business landing with strong and graceful code",
+      "keywords": "business, landing, one page",
+      "description": "Business landing for your services"
+    }
   },
   "menu": {
     "header": [

@@ -1,5 +1,5 @@
 ;
-(function() {
+(function () {
   const arrowBtn = document.querySelector('.to-top');
 
   arrowBtn.addEventListener('click', () => {
@@ -9,10 +9,9 @@
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
 
-    if(scrolled > 100) {
+    if (scrolled > 100) {
       arrowBtn.classList.add('to-top--active');
-    }
-    else {
+    } else {
       arrowBtn.classList.remove('to-top--active');
     }
   });

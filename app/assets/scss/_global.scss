@@ -1,18 +1,23 @@
 @include family(WorkSans, WorkSans, WorkSans-Light) {
   font-weight: 300;
 }
+
 @include family(WorkSans, WorkSans, WorkSans-Regular) {
   font-weight: 400;
 }
+
 @include family(WorkSans, WorkSans, WorkSans-Medium) {
   font-weight: 500;
 }
+
 @include family(WorkSans, WorkSans, WorkSans-SemiBold) {
   font-weight: 600;
 }
+
 @include family(WorkSans, WorkSans, WorkSans-Bold) {
   font-weight: 700;
 }
+
 @include family(Montserrat, Montserrat, Montserrat-Bold) {
   font-weight: 700;
 }
@@ -213,6 +218,7 @@ button {
 .bg {
   position: relative;
   z-index: 1;
+
   &--black {
     background-color: $seventh;
   }
@@ -251,6 +257,7 @@ button {
 
   &__item {
     line-height: 0;
+
     &:not(:last-child) {
       margin-right: em(18, $fs);
     }
@@ -258,6 +265,7 @@ button {
 
   &__link {
     display: inline-block;
+
     &:before {
       display: none;
     }
@@ -274,7 +282,8 @@ button {
     }
   }
 
-  &--teammate {}
+  &--teammate {
+  }
 
   &--location {
     @include media(mobile) {
@@ -357,6 +366,7 @@ button {
 .menu {
   $self: &;
   line-height: em(26, $fs);
+
   &__item {
     $fs: 18;
     font-size: em($fs, $fs_base);
