@@ -1,5 +1,5 @@
 {
-  "name": "appartments",
+  "name": "business-landing",
   "version": "1.0.0",
   "description": "Business landing's task",
   "main": "gulpfile.js",
@@ -15,7 +15,7 @@
     "type": "git"
   },
   "keywords": [
-    "appartments",
+    "business",
     "landing"
   ],
   "author": "AndSmi",
