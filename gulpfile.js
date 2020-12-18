@@ -1,4 +1,4 @@
-const {src, dest, parallel, series, watch, env} = require('gulp'),
+const {src, dest, series, watch} = require('gulp'),
   sass = require('gulp-sass'),
   notify = require('gulp-notify'),
   rename = require('gulp-rename'),
@@ -21,7 +21,7 @@ const {src, dest, parallel, series, watch, env} = require('gulp'),
     'dev': './app',
     'prod': './docs',
     'data': './app/data.json',
-    'bundle': './build',
+    'bundle': './build', // папка куда генерируем бандл с либами
   },
   dev = {
     'pug': root.dev + '/views/**/*.pug',
@@ -30,23 +30,25 @@ const {src, dest, parallel, series, watch, env} = require('gulp'),
     'sass': root.dev + '/assets/scss/styles.scss',
     'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif,webp}',
     'svg': root.dev + '/assets/svg/**/*.svg',
-    'libs': root.dev + '/libs.js',
+    'libs': root.dev + '/libs.js', // путь ко всему коду всех либ
   },
   prod = {
-    'js': root.prod + '/js',
+    'js': root.prod + '/js', // папка, куда генерируем бандл одновременно с root.bundle
     'css': root.prod + '/css',
     'img': root.prod + '/img',
     'fonts': root.prod + '/fonts',
   };
 
+/* Работа с библиотеками  */
 const getModules = () => {};
+/* Работа с библиотеками  */
 
 /* Работа со стилями */
 const stylesMin = () => {
   return src(dev.sass)
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'compressed',
+      outputStyle: (isProd) ? 'compressed' : 'expanded',
     }).on('error', notify.onError()))
     .pipe(prefix([
       '> 1%',
