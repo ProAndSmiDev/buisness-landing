@@ -8,7 +8,7 @@ mixin link(file, rel)
     link(href='./css/' + file + '.css', rel=rel)
 
 mixin script(file)
-  script(src="./js/" + file + ".js" type='module')
+  script(src="./js/" + file + ".js")
 
 mixin svgIcon(icon)
   svg.icon(class='icon--' + icon)
