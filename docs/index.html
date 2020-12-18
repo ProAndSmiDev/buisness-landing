@@ -52,9 +52,9 @@
       </section>
       <section class="bg bg--black" id="team">
         <div class="our-team wrapper">
-          <div class="our-team__head">
+          <header class="our-team__head">
             <h2 class="our-team__title title">Our team</h2>
-          </div>
+          </header>
           <div class="our-team__body">
             <ul class="team-list our-team__team-list">
               <li class="team-list__item">
@@ -293,6 +293,26 @@
           </div>
         </div>
       </section>
+      <section id="projects">
+        <div class="projects wrapper">
+          <header class="projects__head">
+            <h2 class="title projects__title">Projects</h2>
+          </header>
+          <div class="projects__body">
+            <h3 class="title projects__subtitle">Lorem ipsum dolor sit amet</h3>
+            <p class="projects__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.</p>
+            <div class="swiper-container">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide"><img src="./img/home/bg_home.png"></li>
+                <li class="swiper-slide"><img src="./img/home/bg_home.png"></li>
+                <li class="swiper-slide"><img src="./img/home/bg_home.png"></li>
+              </ul>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="bg bg--dark">
@@ -355,6 +375,7 @@
         <use xlink:href="./img/sprite.svg#to-top"></use>
       </svg>
     </button>
-    <script src="./js/app.min.js"></script>
+    <script src="./js/libs.js" type="module"></script>
+    <script src="./js/app.min.js" type="module"></script>
   </body>
 </html>

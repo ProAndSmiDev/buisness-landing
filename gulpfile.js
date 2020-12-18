@@ -1,4 +1,4 @@
-const {src, dest, parallel, series, watch} = require('gulp'),
+const {src, dest, parallel, series, watch, env} = require('gulp'),
   sass = require('gulp-sass'),
   notify = require('gulp-notify'),
   rename = require('gulp-rename'),
@@ -16,10 +16,12 @@ const {src, dest, parallel, series, watch} = require('gulp'),
   pngQuant = require('imagemin-pngquant'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
+  isProd = (process.env.NODE_ENV === 'prod'),
   root = {
     'dev': './app',
     'prod': './docs',
-    'data': './app/data.json'
+    'data': './app/data.json',
+    'bundle': './build',
   },
   dev = {
     'pug': root.dev + '/views/**/*.pug',
@@ -28,6 +30,7 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     'sass': root.dev + '/assets/scss/styles.scss',
     'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif,webp}',
     'svg': root.dev + '/assets/svg/**/*.svg',
+    'libs': root.dev + '/libs.js',
   },
   prod = {
     'js': root.prod + '/js',
@@ -35,6 +38,8 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     'img': root.prod + '/img',
     'fonts': root.prod + '/fonts',
   };
+
+const getModules = () => {};
 
 /* Работа со стилями */
 const stylesMin = () => {
@@ -72,7 +77,7 @@ const pugtohtml = () => {
   return src(dev.pug)
     .pipe(data(() => JSON.parse(fs.readFileSync(root.data, 'utf-8'))))
     .pipe(pug({
-      pretty: true, // поменять, если заказчику нужен html
+      pretty: !isProd,
       locals: root.data,
       plugins: [pugbem],
     }))
@@ -149,6 +154,7 @@ const buildProd = series(fonts, svgtosprite, imgOpt, esMin, stylesMin, pugtohtml
 /* Работа с изначальной сборкой проекта */
 
 /* Таски проекта */
-exports.build2prod = buildProd;
+exports.mode = getModules;
+exports.build = buildProd;
 exports.default = watchFiles;
 /* Таски проекта */

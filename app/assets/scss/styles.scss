@@ -7,16 +7,19 @@
 @import 'helpers/_forms';
 @import 'helpers/_animations';
 
+@import '../../../node_modules/swiper/swiper';
+@import '../../../node_modules/swiper/components/navigation/navigation';
+
 @import '_global';
 
-@import '../../components/logo/_styles';
-@import '../../components/subscribe/_styles';
-@import '../../components/location/_styles';
-@import '../../components/copyright/_styles';
-@import '../../components/links/_styles';
-@import '../../components/top-arrow/_styles';
+@import '../../components/logo/_logo';
+@import '../../components/subscribe/_subscribe';
+@import '../../components/location/_location';
+@import '../../components/copyright/_copyright';
+@import '../../components/links/_links';
+@import '../../components/top-arrow/_top-arrow';
 
-@import '../../components/sections/home/_styles';
-@import '../../components/sections/about-us/_styles';
-@import '../../components/sections/our-team/_styles';
-@import '../../components/sections/projects/_styles';
+@import '../../components/sections/home/_home';
+@import '../../components/sections/about-us/_about-us';
+@import '../../components/sections/our-team/_our-team';
+@import '../../components/sections/projects/_projects';
