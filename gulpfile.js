@@ -16,6 +16,8 @@ const {src, dest, series, watch} = require('gulp'),
   pngQuant = require('imagemin-pngquant'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
+  browserify = require('gulp-bro'),
+  babelify = require('babelify'),
   isProd = (process.env.NODE_ENV === 'prod'),
   root = {
     'dev': './app',
@@ -40,7 +42,16 @@ const {src, dest, series, watch} = require('gulp'),
   };
 
 /* Работа с библиотеками  */
-const getModules = () => {};
+const getModules = () => {
+  return src(dev.libs)
+    .pipe(browserify({
+      transform: [
+        babelify.configure({presets: ['@babel/env']})
+      ]
+    }))
+    .pipe(dest(root.bundle))
+    .pipe(dest(prod.js));
+};
 /* Работа с библиотеками  */
 
 /* Работа со стилями */
@@ -144,6 +155,7 @@ const watchFiles = () => {
 
   watch(dev.fonts, fonts);
   watch(dev.svg, svgtosprite);
+  watch(dev.libs, getModules);
   watch(dev.img, imgOpt);
   watch(dev.es, series(esMin));
   watch([root.dev + '/assets/scss/**/*.scss', root.dev + '/components/**/*.scss'], series(stylesMin));
@@ -152,7 +164,7 @@ const watchFiles = () => {
 /* работа с localhost */
 
 /* Работа с изначальной сборкой проекта */
-const buildProd = series(fonts, svgtosprite, imgOpt, esMin, stylesMin, pugtohtml);
+const buildProd = series(fonts, getModules, svgtosprite, imgOpt, esMin, stylesMin, pugtohtml);
 /* Работа с изначальной сборкой проекта */
 
 /* Таски проекта */
