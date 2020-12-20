@@ -9,7 +9,7 @@
       menuLink.forEach((mLink) => {
         mLink.classList.remove('menu__link--active');
 
-        if (mLink.innerText && mLink.innerText === el.innerText) {
+        if (mLink.innerText && mLink.innerText.toLowerCase() === el.innerText.toLowerCase()) {
           mLink.classList.add('menu__link--active');
         }
       });
