@@ -1,4 +1,4 @@
-const {src, dest, series, watch} = require('gulp'),
+const {src, dest, parallel, series, watch} = require('gulp'),
   sass = require('gulp-sass'),
   notify = require('gulp-notify'),
   rename = require('gulp-rename'),
@@ -23,7 +23,10 @@ const {src, dest, series, watch} = require('gulp'),
     'dev': './app',
     'prod': './docs',
     'data': './app/data.json',
-    'bundle': './build', // папка куда генерируем бандл с либами
+    'bundle': './build',
+  },
+  modules = {
+    'lib': root.bundle + '/libs.js',
   },
   dev = {
     'pug': root.dev + '/views/**/*.pug',
@@ -32,10 +35,10 @@ const {src, dest, series, watch} = require('gulp'),
     'sass': root.dev + '/assets/scss/styles.scss',
     'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif,webp}',
     'svg': root.dev + '/assets/svg/**/*.svg',
-    'libs': root.dev + '/libs.js', // путь ко всему коду всех либ
+    'libs': root.dev + '/libs.js',
   },
   prod = {
-    'js': root.prod + '/js', // папка, куда генерируем бандл одновременно с root.bundle
+    'js': root.prod + '/js',
     'css': root.prod + '/css',
     'img': root.prod + '/img',
     'fonts': root.prod + '/fonts',
@@ -47,10 +50,9 @@ const getModules = () => {
     .pipe(browserify({
       transform: [
         babelify.configure({presets: ['@babel/env']})
-      ]
+      ],
     }))
-    .pipe(dest(root.bundle))
-    .pipe(dest(prod.js));
+    .pipe(dest(root.bundle));
 };
 /* Работа с библиотеками  */
 
@@ -77,12 +79,15 @@ const stylesMin = () => {
 /* Работа со стилями */
 
 /* Работа со скриптами */
-const esMin = () => {
-  return src(dev.es)
+const esMin = series([getModules], () => {
+  return src([
+    modules.lib,
+    dev.es
+  ])
     .pipe(concat('app.min.js'))
     .pipe(uglES())
     .pipe(dest(prod.js));
-};
+});
 /* Работа со скриптами */
 
 /* Работа с шаблонизатором */
@@ -155,20 +160,22 @@ const watchFiles = () => {
 
   watch(dev.fonts, fonts);
   watch(dev.svg, svgtosprite);
-  watch(dev.libs, getModules);
   watch(dev.img, imgOpt);
-  watch(dev.es, series(esMin));
-  watch([root.dev + '/assets/scss/**/*.scss', root.dev + '/components/**/*.scss'], series(stylesMin));
+  watch([dev.es, dev.libs], esMin);
+  watch([root.dev + '/assets/scss/**/*.scss', root.dev + '/components/**/*.scss'], stylesMin);
   watch([root.data, root.dev + '/**/*.pug'], pugtohtml);
 };
 /* работа с localhost */
 
 /* Работа с изначальной сборкой проекта */
-const buildProd = series(fonts, getModules, svgtosprite, imgOpt, esMin, stylesMin, pugtohtml);
+const buildProd = parallel([
+  parallel(fonts, imgOpt),
+  series(pugtohtml, stylesMin),
+  series(esMin, svgtosprite),
+]);
 /* Работа с изначальной сборкой проекта */
 
 /* Таски проекта */
-exports.mode = getModules;
 exports.build = buildProd;
 exports.default = watchFiles;
 /* Таски проекта */

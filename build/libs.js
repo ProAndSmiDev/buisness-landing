@@ -15,8 +15,7 @@ new _swiper["default"]('.swiper-container', {
   loop: true,
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    clickable: true
+    prevEl: '.swiper-button-prev'
   }
 });
 
