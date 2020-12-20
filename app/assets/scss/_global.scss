@@ -46,6 +46,10 @@ header {
       padding-bottom: em(20, $fs);
     }
   }
+
+  &[class$='__head'] {
+    position: static;
+  }
 }
 
 .wrapper {

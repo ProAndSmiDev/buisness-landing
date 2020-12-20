@@ -506,6 +506,10 @@ header {
   }
 }
 
+header[class$='__head'] {
+  position: static;
+}
+
 .wrapper {
   display: -webkit-box;
   display: -webkit-flex;
