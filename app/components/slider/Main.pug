@@ -1,0 +1,10 @@
+.slider.__slider.swiper-container
+  ul.__list.swiper-wrapper
+    each project in sections.projects.items
+      li.__item.swiper-slide(data-project=project.projectName)
+        picture.__slide-pic
+          source(srcset=project.webp type="image/webp")
+
+          img(src=project.other alt=project.alt).__slide-pic--img
+  .__btn.--next.swiper-button-next
+  .__btn.--prev.swiper-button-prev

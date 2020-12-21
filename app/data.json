@@ -296,6 +296,40 @@
           ]
         }
       ]
+    },
+    "projects": {
+      "items": [
+        {
+          "projectName": "Prototype",
+          "webp": "./img/projects/tested-photo_1110x540.webp",
+          "other": "./img/projects/tested-photo_1110x540.jpg",
+          "alt": "Tested slide's photo"
+        },
+        {
+          "projectName": "Design",
+          "webp": "./img/projects/tested-photo_1110x540.webp",
+          "other": "./img/projects/tested-photo_1110x540.jpg",
+          "alt": "Tested slide's photo"
+        },
+        {
+          "projectName": "Deployment",
+          "webp": "./img/projects/tested-photo_1110x540.webp",
+          "other": "./img/projects/tested-photo_1110x540.jpg",
+          "alt": "Tested slide's photo"
+        },
+        {
+          "projectName": "Seo",
+          "webp": "./img/projects/tested-photo_1110x540.webp",
+          "other": "./img/projects/tested-photo_1110x540.jpg",
+          "alt": "Tested slide's photo"
+        },
+        {
+          "projectName": "Marketing",
+          "webp": "./img/projects/tested-photo_1110x540.webp",
+          "other": "./img/projects/tested-photo_1110x540.jpg",
+          "alt": "Tested slide's photo"
+        }
+      ]
     }
   },
   "footer": {

@@ -1,0 +1,118 @@
+.slider {
+  max-height: em(506, $fs);
+
+  &__list {
+    justify-content: flex-start;
+  }
+
+  &__item {
+    position: relative;
+    height: 100%;
+
+    &:before {
+      $fs: 18;
+      font-size: em($fs, $fs_base);
+      @include pseudo($content: attr(data-project));
+      top: em(13, $fs);
+      left: 0;
+      background-color: $seventh;
+      max-width: em(350, $fs);
+      width: 100%;
+      color: $primary;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: em(0.15, $fs);
+      text-align: center;
+      line-height: em(53, $fs);
+      padding: em(5, $fs) em(20, $fs);
+      box-sizing: border-box;
+      z-index: 2;
+      @include media(tablet) {
+        $fs: 18;
+        font-size: em($fs, $fs_base);
+        max-width: em(280, $fs);
+      }
+      @include media(smartphone) {
+        $fs: 16;
+        font-size: em($fs, $fs_base);
+        padding-bottom: em(10, $fs);
+        padding-top: em(10, $fs);
+        line-height: em(25, $fs);
+        max-width: em(240, $fs);
+      }
+      @include media(574) {
+        $fs: 18;
+        font-size: em($fs, $fs_base);
+        bottom: 0;
+        top: auto;
+        max-width: 100%;
+        opacity: 0.8;
+        line-height: em(18, $fs);
+      }
+      @include media(380) {
+        $fs: 14;
+        font-size: em($fs, $fs_base);
+        line-height: em(14, $fs);
+        padding-bottom: em(5, $fs);
+        padding-top: em(5, $fs);
+      }
+    }
+  }
+
+  &__slide-pic {
+    display: block;
+
+    &--img {
+      position: relative;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, 0);
+      @include media(574) {
+        max-height: em(248, $fs);
+      }
+      @include media(380) {
+        max-height: em(132, $fs);
+      }
+    }
+  }
+
+  &__btn {
+    color: $seventh;
+    opacity: .3;
+    transition: opacity .3s ease-in-out;
+
+    &:after {
+      $fs: 34;
+      font-size: em($fs, $fs_base);
+      @include media(mobile) {
+        $fs: 24;
+        font-size: em($fs, $fs_base);
+      }
+    }
+
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+
+    &--next {
+      right: em(25, $fs);
+      @include media(mobile) {
+        right: em(5, $fs);
+      }
+    }
+
+    &--prev {
+      left: em(25, $fs);
+      @include media(mobile) {
+        left: em(5, $fs);
+      }
+    }
+  }
+  @include media(574) {
+    max-height: em(248, $fs);
+  }
+  @include media(380) {
+    max-height: em(132, $fs);
+  }
+}

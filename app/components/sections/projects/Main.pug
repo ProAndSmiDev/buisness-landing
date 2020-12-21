@@ -5,22 +5,4 @@ section#projects
     .__body
       h3.title.__subtitle Lorem ipsum dolor sit amet
       p.__info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at vestibulum est. Maecenas elit turpis, dictum et purus maximus, posuere iaculis est. Nam id maximus sem.
-      .slider.__slider.swiper-container
-        ul.__list.swiper-wrapper
-          li.__item.swiper-slide(data-project="Prototype")
-            picture.__slide-pic
-              source(srcset="./img/projects/tested-photo.webp" type="image/webp")
-
-              img(src="./img/projects/tested-photo.jpg" alt="Tested slide's photo")
-          li.__item.swiper-slide(data-project="Design")
-            picture.__slide-pic
-              source(srcset="./img/projects/tested-photo.webp" type="image/webp")
-
-              img(src="./img/projects/tested-photo.jpg" alt="Tested slide's photo")
-          li.__item.swiper-slide(data-project="Deployment")
-            picture.__slide-pic
-              source(srcset="./img/projects/tested-photo.webp" type="image/webp")
-
-              img(src="./img/projects/tested-photo.jpg" alt="Tested slide's photo")
-        .__btn.--next.swiper-button-next
-        .__btn.--prev.swiper-button-prev
+      include ../../slider/Main
