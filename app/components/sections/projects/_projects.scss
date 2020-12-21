@@ -1,3 +1,103 @@
 .projects {
+  padding-top: em(118, $fs);
+  padding-bottom: em(118, $fs);
   min-height: em(888, $fs);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  &__head {
+    margin-bottom: em(55, $fs);
+  }
+
+  &__title {
+    $fs: 36;
+    font-size: em($fs, $fs_base);
+    color: $secondary;
+    letter-spacing: em(0.15, $fs);
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__subtitle {
+    $fs: 18;
+    font-size: em($fs, $fs_base);
+    color: $secondary;
+    letter-spacing: em(0.15, $fs);
+    margin-bottom: em(19, $fs);
+  }
+
+  &__info {
+    max-width: em(486, $fs);
+    margin-bottom: em(41, $fs);
+  }
+}
+
+.slider {
+  max-width: em(920, $fs);
+  max-height: em(420, $fs);
+
+  &__list {
+    justify-content: flex-start;
+  }
+
+  &__item {
+    position: relative;
+    height: 420px;
+
+    &:before {
+      $fs: 18;
+      font-size: em($fs, $fs_base);
+      @include pseudo($content: attr(data-project));
+      top: em(13, $fs);
+      left: 0;
+      background-color: $seventh;
+      max-width: 350px;
+      width: 100%;
+      color: $primary;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: em(0.15, $fs);
+      text-align: center;
+      line-height: 53px;
+      padding-right: em(20, $fs);
+      padding-left: em(20, $fs);
+      box-sizing: border-box;
+      z-index: 2;
+    }
+  }
+
+  &__slide-pic {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__btn {
+    color: $seventh;
+    opacity: .3;
+    transition: opacity .3s ease-in-out;
+    
+    &:after {
+      $fs: 34;
+      font-size: em($fs, $fs_base);
+    }
+
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+
+    &--next {
+      right: em(25, $fs);
+    }
+
+    &--prev {
+      left: em(25, $fs);
+    }
+  }
 }
