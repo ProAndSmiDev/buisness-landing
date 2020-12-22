@@ -26,7 +26,7 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     'bundle': './build',
   },
   modules = {
-    'lib': root.bundle + '/libs.js',
+    'lib': root.bundle + '/libs.min.js',
   },
   dev = {
     'pug': root.dev + '/views/**/*.pug',
@@ -35,7 +35,7 @@ const {src, dest, parallel, series, watch} = require('gulp'),
     'sass': root.dev + '/assets/scss/styles.scss',
     'img': root.dev + '/assets/img/**/*.{jpg,png,jpeg,gif,webp}',
     'svg': root.dev + '/assets/svg/**/*.svg',
-    'libs': root.dev + '/libs.js',
+    'libs': root.dev + '/libs/*.js',
   },
   prod = {
     'js': root.prod + '/js',
@@ -52,6 +52,7 @@ const getModules = () => {
         babelify.configure({presets: ['@babel/env']})
       ],
     }))
+    .pipe(concat('libs.min.js'))
     .pipe(dest(root.bundle));
 };
 /* Работа с библиотеками  */
