@@ -49,6 +49,7 @@ header {
 
   &[class$='__head'] {
     position: static;
+    z-index: 1;
   }
 }
 

@@ -1,46 +1,25 @@
-@media all and (min-width: 320px) {
-  #OSMMap {
-    width: 100%;
-    height: 360px;
+#OSMMap{
+  min-height: 888px;
+  z-index: 0;
 
-    .leaflet-popup-content {
-      margin: 5px 10px;
-
-      .map-header {
-        &__title {
-          font-size: 16px;
-        }
-
-        &__address {
-          margin: 0;
-          font-size: 12px;
-          color: #888888;
-        }
-      }
-
-      .map-body {
-        &__text {
-          margin: 10px 0;
-        }
-      }
-
-      .map-footer {
-        overflow: hidden;
-
-        &__phone,
-        &__email {
-          margin: 5px 0;
-          font-size: 10px;
-        }
-
-        .phone {
-          float: right;
-        }
-
-        .email {
-          float: left;
-        }
-      }
+  a {
+    &:before {
+      display: none;
     }
   }
+
+  .leaflet-control-container {
+    display: none;
+  }
+
+  .leaflet-tile-pane {
+    filter: invert(1);
+  }
 }
+.leaflet-popup-content{margin:5px 10px;}
+.leaflet-popup-content .map-header .map-header__title{font-size:16px;}
+.leaflet-popup-content .map-header p.map-header__address{margin:0;font-size:12px;color:#888888;}
+.leaflet-popup-content .map-body p.map-body__text{margin:10px 0;}
+.leaflet-popup-content .map-footer{overflow:hidden;}
+.leaflet-popup-content .map-footer p.map-footer__phone{margin:5px 0;float:right;font-size:10px;}
+.leaflet-popup-content .map-footer p.map-footer__email{margin:5px 0;float:left;font-size:10px;}

@@ -1,17 +1,18 @@
 import  L from 'leaflet';
 
-const host = 'https://maps.omniscale.net/v2/tested-api-ccbe1bdb/style.grayscale/{z}/{x}/{y}.png';
+const host = 'https://maps.omniscale.net/v2/tested-api-cd5973f2/style.grayscale/hq.true/{z}/{x}/{y}.png';
 const coords = [40.7560984, -73.9845125];
+const center = [40.759929, -74.071074];
 const attribution = '';
-const map = L.map('OSMMap').setView(coords, 13);
+const map = L.map('OSMMap').setView(center, 13);
 const myIcon = L.icon({
   iconUrl: '/img/contacts/leaflet-map-marker.png',
   iconSize: [24, 32],
 });
 
 L.tileLayer(host, {
-  id: 'tested-api-ccbe1bdb', // до 5 января на localhost
-  attribution: attribution
+  id: 'tested-api-cd5973f2', // до 5 января на localhost
+  attribution: attribution,
 }).addTo(map);
 
 L.marker(coords, {
